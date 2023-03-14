@@ -4,7 +4,7 @@
 #
 Name     : pypi-xgboost
 Version  : 1.7.4
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/5f/1f/ec8651b2c235c319e925918f355466294de8f3846d1a749898a70bfce01c/xgboost-1.7.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/5f/1f/ec8651b2c235c319e925918f355466294de8f3846d1a749898a70bfce01c/xgboost-1.7.4.tar.gz
 Summary  : XGBoost Python Package
@@ -100,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678477775
+export SOURCE_DATE_EPOCH=1678757913
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
