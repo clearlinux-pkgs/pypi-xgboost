@@ -5,14 +5,12 @@
 #
 Name     : pypi-xgboost
 Version  : 1.7.5
-Release  : 6
+Release  : 7
 URL      : https://files.pythonhosted.org/packages/08/44/65ef54bf0ed613c955cbcada4f22959cae94b3c5c9e223e75734d0e7caf2/xgboost-1.7.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/08/44/65ef54bf0ed613c955cbcada4f22959cae94b3c5c9e223e75734d0e7caf2/xgboost-1.7.5.tar.gz
 Summary  : XGBoost Python Package
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: pypi-xgboost-filemap = %{version}-%{release}
-Requires: pypi-xgboost-lib = %{version}-%{release}
 Requires: pypi-xgboost-license = %{version}-%{release}
 Requires: pypi-xgboost-python = %{version}-%{release}
 Requires: pypi-xgboost-python3 = %{version}-%{release}
@@ -33,30 +31,11 @@ XGBoost Python Package
 %package dev
 Summary: dev components for the pypi-xgboost package.
 Group: Development
-Requires: pypi-xgboost-lib = %{version}-%{release}
 Provides: pypi-xgboost-devel = %{version}-%{release}
 Requires: pypi-xgboost = %{version}-%{release}
 
 %description dev
 dev components for the pypi-xgboost package.
-
-
-%package filemap
-Summary: filemap components for the pypi-xgboost package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-xgboost package.
-
-
-%package lib
-Summary: lib components for the pypi-xgboost package.
-Group: Libraries
-Requires: pypi-xgboost-license = %{version}-%{release}
-Requires: pypi-xgboost-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-xgboost package.
 
 
 %package license
@@ -79,7 +58,6 @@ python components for the pypi-xgboost package.
 %package python3
 Summary: python3 components for the pypi-xgboost package.
 Group: Default
-Requires: pypi-xgboost-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(xgboost)
 Requires: pypi(numpy)
@@ -101,15 +79,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680629594
+export SOURCE_DATE_EPOCH=1683049066
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -214,14 +192,6 @@ popd
 /usr/lib/python3.11/site-packages/xgboost/rabit/include/rabit/rabit.h
 /usr/lib/python3.11/site-packages/xgboost/rabit/include/rabit/serializable.h
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-xgboost
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-xgboost/4d98c20884442064704475a2c7092515382cfe48
@@ -231,4 +201,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
