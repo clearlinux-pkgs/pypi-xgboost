@@ -6,10 +6,10 @@
 # autospec commit: 250a666
 #
 Name     : pypi-xgboost
-Version  : 2.0.1
-Release  : 12
-URL      : https://files.pythonhosted.org/packages/69/c4/e58319c1b2b879e3c06cdb864368912a7bdb0f2393406b501e2b2326985d/xgboost-2.0.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/69/c4/e58319c1b2b879e3c06cdb864368912a7bdb0f2393406b501e2b2326985d/xgboost-2.0.1.tar.gz
+Version  : 2.0.2
+Release  : 13
+URL      : https://files.pythonhosted.org/packages/94/2c/d6246b29c78975f6afc52287cff4e083b5cc86f922e6e18ac4f5bf6b5f2f/xgboost-2.0.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/94/2c/d6246b29c78975f6afc52287cff4e083b5cc86f922e6e18ac4f5bf6b5f2f/xgboost-2.0.2.tar.gz
 Summary  : XGBoost Python Package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause
@@ -57,10 +57,10 @@ python3 components for the pypi-xgboost package.
 
 
 %prep
-%setup -q -n xgboost-2.0.1
-cd %{_builddir}/xgboost-2.0.1
+%setup -q -n xgboost-2.0.2
+cd %{_builddir}/xgboost-2.0.2
 pushd ..
-cp -a xgboost-2.0.1 buildavx2
+cp -a xgboost-2.0.2 buildavx2
 popd
 
 %build
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1698160751
+export SOURCE_DATE_EPOCH=1699898736
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
