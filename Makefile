@@ -1,5 +1,5 @@
 PKG_NAME := pypi-xgboost
-URL = https://files.pythonhosted.org/packages/53/4a/316018e4d5d47f2a671d89e2ee5a8b6686689e7576258929b222b07aa097/xgboost-2.0.3.tar.gz
+URL = https://files.pythonhosted.org/packages/c1/57/3d73029d72be166b3334121560bc72ea7d96dd2c6839a3bcad6be2cd6774/xgboost-2.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
