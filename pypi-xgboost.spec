@@ -7,7 +7,7 @@
 #
 Name     : pypi-xgboost
 Version  : 2.1.1
-Release  : 19
+Release  : 20
 URL      : https://files.pythonhosted.org/packages/fa/34/61667c6b7f997dd7018b095562c718b41f9d1ece9b42047438a0ad12c4f5/xgboost-2.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/fa/34/61667c6b7f997dd7018b095562c718b41f9d1ece9b42047438a0ad12c4f5/xgboost-2.1.1.tar.gz
 Summary  : XGBoost Python Package
@@ -50,7 +50,6 @@ Group: Default
 Requires: python3-core
 Provides: pypi(xgboost)
 Requires: pypi(numpy)
-Requires: pypi(nvidia_nccl_cu12)
 Requires: pypi(scipy)
 
 %description python3
@@ -69,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1728659819
+export SOURCE_DATE_EPOCH=1728662289
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
