@@ -6,13 +6,13 @@
 # autospec commit: 4d029647d79e
 #
 Name     : pypi-xgboost
-Version  : 2.0.3
-Release  : 18
-URL      : https://files.pythonhosted.org/packages/53/4a/316018e4d5d47f2a671d89e2ee5a8b6686689e7576258929b222b07aa097/xgboost-2.0.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/53/4a/316018e4d5d47f2a671d89e2ee5a8b6686689e7576258929b222b07aa097/xgboost-2.0.3.tar.gz
+Version  : 2.1.1
+Release  : 19
+URL      : https://files.pythonhosted.org/packages/fa/34/61667c6b7f997dd7018b095562c718b41f9d1ece9b42047438a0ad12c4f5/xgboost-2.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fa/34/61667c6b7f997dd7018b095562c718b41f9d1ece9b42047438a0ad12c4f5/xgboost-2.1.1.tar.gz
 Summary  : XGBoost Python Package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause
+License  : Apache-2.0
 Requires: pypi-xgboost-license = %{version}-%{release}
 Requires: pypi-xgboost-python = %{version}-%{release}
 Requires: pypi-xgboost-python3 = %{version}-%{release}
@@ -58,10 +58,10 @@ python3 components for the pypi-xgboost package.
 
 
 %prep
-%setup -q -n xgboost-2.0.3
-cd %{_builddir}/xgboost-2.0.3
+%setup -q -n xgboost-2.1.1
+cd %{_builddir}/xgboost-2.1.1
 pushd ..
-cp -a xgboost-2.0.3 buildavx2
+cp -a xgboost-2.1.1 buildavx2
 popd
 
 %build
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1728612420
+export SOURCE_DATE_EPOCH=1728659819
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,7 +117,6 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-xgboost
 cp %{_builddir}/xgboost-%{version}/cpp_src/LICENSE %{buildroot}/usr/share/package-licenses/pypi-xgboost/4d98c20884442064704475a2c7092515382cfe48 || :
 cp %{_builddir}/xgboost-%{version}/cpp_src/dmlc-core/LICENSE %{buildroot}/usr/share/package-licenses/pypi-xgboost/92170cdc034b2ff819323ff670d3b7266c8bffcd || :
 cp %{_builddir}/xgboost-%{version}/cpp_src/gputreeshap/LICENSE %{buildroot}/usr/share/package-licenses/pypi-xgboost/9f1392cfadfeae533c33a7d4386ab7ebe8b89bdb || :
-cp %{_builddir}/xgboost-%{version}/cpp_src/rabit/LICENSE %{buildroot}/usr/share/package-licenses/pypi-xgboost/6f755c9a3e0bbbfda2f9a37a7102e0606ea145f5 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -138,7 +137,6 @@ popd
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-xgboost/4d98c20884442064704475a2c7092515382cfe48
-/usr/share/package-licenses/pypi-xgboost/6f755c9a3e0bbbfda2f9a37a7102e0606ea145f5
 /usr/share/package-licenses/pypi-xgboost/92170cdc034b2ff819323ff670d3b7266c8bffcd
 /usr/share/package-licenses/pypi-xgboost/9f1392cfadfeae533c33a7d4386ab7ebe8b89bdb
 
